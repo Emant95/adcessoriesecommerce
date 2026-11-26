@@ -20,7 +20,9 @@ export default function AdminLayout() {
   const { session, can, logout } = useAuth();
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
-  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   const nav = (
     <nav className="flex flex-1 flex-col gap-1">

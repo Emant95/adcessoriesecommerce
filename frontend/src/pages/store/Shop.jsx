@@ -97,7 +97,9 @@ export default function Shop({ preset }) {
   }, [preset, category, query.search]);
 
   useSeo({ title: `${heading.title} | Adcessories`, description: heading.text });
-  useEffect(() => setFiltersOpen(false), [slug, preset]);
+  useEffect(() => {
+    setFiltersOpen(false);
+  }, [slug, preset]);
 
   const activeCount = ['minPrice', 'maxPrice', 'colors', 'sizes', 'tags', 'inStock', 'onSale', 'featured'].filter((k) => params.get(k)).length;
 
