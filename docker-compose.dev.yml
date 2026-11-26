@@ -1,0 +1,15 @@
+# Just a PostgreSQL database for local development (run the API and web with npm).
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: adcessories
+      POSTGRES_USER: adcessories
+      POSTGRES_PASSWORD: adcessories
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_dev_data:/var/lib/postgresql/data
+
+volumes:
+  db_dev_data:
